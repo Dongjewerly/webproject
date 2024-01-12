@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload with html css javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="card">
+            <h1>made by 유동석</h1>
+            <p>insta: @d_vely01</p>
+            <img src="images/profile.png" alt="profile" id="profile_pic">
+            <label for="input-file">이미지업로드</label>
+            <input type="file" accept="images/jpeg, images/png, image/jpg" id="input-file" >
+        </div>
+    </div>
+
+
+    <script>
+        let profilePic = document.getElementById("profile_pic");
+        let inputFile = document.getElementById("input-file");
+        
+        inputFile.onchange = function() {
+            profilePic.src = URL.createObjectURL(inputFile.files[0]);
+        }
+    </script>
+</body>
+
+</html>
